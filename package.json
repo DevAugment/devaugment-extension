@@ -5,7 +5,9 @@
   "version": "0.1.0",
   "description": "DevAugment is an open-source AI-powered productivity extension for Visual Studio Code.\r It helps developers write better code faster by providing:",
   "categories": [
-    "Other"
+    "Other",
+    "Productivity",
+    "AI"
   ],
   "engines": {
     "vscode": "^1.85.0"
@@ -43,6 +45,7 @@
   "devDependencies": {
     "@types/node": "^24.10.1",
     "@types/node-fetch": "^2.6.13",
+    "@types/vscode": "^1.106.1",
     "typescript": "^5.9.3",
     "vscode-test": "^1.6.1"
   }
