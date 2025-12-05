@@ -1,0 +1,49 @@
+{
+  "name": "devaugment-extension",
+  "displayName": "DevAugment",
+  "publisher": "kjxcodez",
+  "version": "0.1.0",
+  "description": "DevAugment is an open-source AI-powered productivity extension for Visual Studio Code.\r It helps developers write better code faster by providing:",
+  "categories": [
+    "Other"
+  ],
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "activationEvents": [
+    "onCommand:devaugment.reviewCode",
+    "onCommand:devaugment.generateComments",
+    "onCommand:devaugment.debugSuggestions",
+    "onView:devaugmentHistory"
+  ],
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "node ./out/test/runTest.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevAugment/devaugment-extension.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "kjxcodez"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DevAugment/devaugment-extension/issues"
+  },
+  "homepage": "https://github.com/DevAugment/devaugment-extension#readme",
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@types/node-fetch": "^2.6.13",
+    "typescript": "^5.9.3",
+    "vscode-test": "^1.6.1"
+  }
+}
