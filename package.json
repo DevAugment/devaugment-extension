@@ -10,15 +10,55 @@
     "AI"
   ],
   "engines": {
-    "vscode": "^1.85.0"
+    "vscode": "^1.106.0"
   },
   "activationEvents": [
     "onCommand:devaugment.reviewCode",
     "onCommand:devaugment.generateComments",
     "onCommand:devaugment.debugSuggestions",
+    "onCommand:devaugment.setApiKey",
+    "onCommand:devaugment.openSettings",
     "onView:devaugmentHistory"
   ],
   "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "DevAugment",
+      "properties": {
+        "devaugment.provider": {
+          "type": "string",
+          "enum": [
+            "openai",
+            "gemini"
+          ],
+          "default": "gemini",
+          "description": "Choose the AI provider."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "devaugment.reviewCode",
+        "title": "DevAugment: Review Code"
+      },
+      {
+        "command": "devaugment.generateComments",
+        "title": "DevAugment: Generate Comments"
+      },
+      {
+        "command": "devaugment.debugSuggestions",
+        "title": "DevAugment: Suggest Debug Steps"
+      },
+      {
+        "command": "devaugment.setApiKey",
+        "title": "DevAugment: Set API Key"
+      },
+      {
+        "command": "devaugment.openSettings",
+        "title": "DevAugment: Open Settings Panel"
+      }
+    ]
+  },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
@@ -40,6 +80,7 @@
   },
   "homepage": "https://github.com/DevAugment/devaugment-extension#readme",
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "node-fetch": "^2.7.0"
   },
   "devDependencies": {
